@@ -1,0 +1,15 @@
+@mixin flex($cross1: row, $cross2: center, $wrap: nowrap, $justify: space-between) {
+
+    display: flex;
+    flex-wrap: $wrap;
+    align-items: $cross2;
+    
+    //------- work flex-direction
+    @if $cross1 == row {
+        flex-direction: row;
+        justify-content: $justify;
+    }@else {
+        flex-direction: column;
+        justify-content: $cross2;
+    }
+}
